@@ -10,7 +10,7 @@ class FileController {
             title: req.file.originalname,
             path: req.file.key,
 
-        })
+        });
 
         box.files.push(file);
 
