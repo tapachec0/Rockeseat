@@ -1,22 +1,24 @@
 const mongoose = require('mongoose');
 
 /*schema é como se fosse uma tabela */
-const File = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true,
+const File = new mongoose.Schema(
+    {
+        title: {
+            type: String,
+            required: true,
+        },
+        path: {
+            type: String,
+            required: true,
+        }
     },
-    path: {
-        type: String,
-        required: true,
-    },
-    files: []
-}, {
+    {
     /*mostra data de criação e edição de arquivo */
     timestamps:true,
     toObject: { virtuals: true },
     toJSON: { virtuals: true }
-});
+    }
+);
 
  
 File.virtual("url").get(function() {

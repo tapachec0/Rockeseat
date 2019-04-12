@@ -23,6 +23,8 @@ mongoose.connect('mongodb+srv://talyta:taga@0713@cluster0-gv1x4.mongodb.net/test
     }
 );
 
+
+
 app.use((req, res, next) => {
     req.io = io;
     return next();
